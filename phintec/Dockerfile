@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.150.1
+FROM jawdat/our_jenkins:latest
 
 # RUN addgroup -S jawdat && adduser -S jawdat -G jawdat
 
