@@ -1,5 +1,9 @@
 FROM jawdat/our_jenkins:latest
 
-# RUN addgroup -S jawdat && adduser -S jawdat -G jawdat
+RUN apt-get update && \
+      apt-get -y install sudo
 
-# USER jawdat
+RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+
+USER docker
+CMD /bin/bash
